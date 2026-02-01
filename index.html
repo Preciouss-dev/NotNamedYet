@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PhishShield ZA</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="nav">
+        <div class="brand">PhishShield ZA</div>
+        <div class="nav-links">
+          <a href="#risk">Risk Check</a>
+          <a href="#directory">Verified Directory</a>
+          <a href="#report">Report</a>
+        </div>
+        <button class="cta">Download Beta</button>
+      </nav>
+      <div class="hero-content">
+        <div>
+          <p class="tag">Powered by community intel + verified banks</p>
+          <h1>Detect banking, SMS, WhatsApp & call scams in South Africa.</h1>
+          <p class="lead">
+            PhishShield ZA helps you identify phishing and social engineering attempts with real-time risk
+            signals, on-device message analysis, and a verified institution directory.
+          </p>
+          <div class="hero-actions">
+            <button class="cta">Get Protected</button>
+            <button class="ghost">See how it works</button>
+          </div>
+          <div class="stats">
+            <div>
+              <strong>120K+</strong>
+              <span>community reports</span>
+            </div>
+            <div>
+              <strong>11</strong>
+              <span>SA banks verified</span>
+            </div>
+            <div>
+              <strong>4</strong>
+              <span>local languages</span>
+            </div>
+          </div>
+        </div>
+        <div class="hero-card">
+          <h3>Incoming Call</h3>
+          <p class="call-number">+27 83 555 0199</p>
+          <div class="risk high">High Risk · Reported as “Fake Bank Call”</div>
+          <div class="card-actions">
+            <button class="ghost">Call Back Official Line</button>
+            <button class="cta">Block & Report</button>
+          </div>
+          <p class="note">Last reported 8 minutes ago · Gauteng</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section" id="risk">
+        <div class="section-title">
+          <h2>Check a number or message</h2>
+          <p>Instantly see a risk score and recommended action.</p>
+        </div>
+        <div class="risk-check">
+          <div class="input-group">
+            <label for="lookup">Number or message snippet</label>
+            <input id="lookup" type="text" placeholder="e.g. +27 11 123 0000 or ‘Urgent: verify your OTP’" />
+          </div>
+          <div class="input-group">
+            <label for="channel">Channel</label>
+            <select id="channel">
+              <option>Phone Call</option>
+              <option>SMS</option>
+              <option>WhatsApp</option>
+            </select>
+          </div>
+          <button id="checkRisk" class="cta">Check risk</button>
+        </div>
+        <div class="risk-result" id="riskResult">
+          <div>
+            <span class="badge" id="riskBadge">Unknown</span>
+            <h3 id="riskHeadline">Awaiting analysis</h3>
+            <p id="riskText">Enter a number or message snippet to see guidance.</p>
+          </div>
+          <div class="tips">
+            <h4>Safety steps</h4>
+            <ul id="riskTips">
+              <li>Never share OTPs or PINs.</li>
+              <li>Call your bank back using a verified number.</li>
+              <li>Report suspicious numbers to protect others.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="directory">
+        <div class="section-title">
+          <h2>Verified Institution Directory</h2>
+          <p>Compare inbound numbers with official SA bank, courier, and government contact lines.</p>
+        </div>
+        <div class="directory">
+          <div class="directory-card">
+            <h3>Major Banks</h3>
+            <ul>
+              <li>ABSA · 0860 557 557</li>
+              <li>Standard Bank · 0860 123 000</li>
+              <li>FNB · 087 575 9404</li>
+              <li>Nedbank · 0860 555 111</li>
+            </ul>
+          </div>
+          <div class="directory-card">
+            <h3>Couriers</h3>
+            <ul>
+              <li>DHL · 0860 345 000</li>
+              <li>Courier Guy · 0861 203 203</li>
+              <li>PostNet · 0861 767 638</li>
+            </ul>
+          </div>
+          <div class="directory-card">
+            <h3>Government</h3>
+            <ul>
+              <li>SAPS · 10111</li>
+              <li>Home Affairs · 0800 60 11 90</li>
+              <li>DSBD · 086 677 7867</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="report">
+        <div class="section-title">
+          <h2>Report a scam attempt</h2>
+          <p>Help the community by reporting suspicious numbers, URLs, or message patterns.</p>
+        </div>
+        <form class="report" id="reportForm">
+          <div class="input-group">
+            <label for="reportChannel">Channel</label>
+            <select id="reportChannel" required>
+              <option value="Phone Call">Phone Call</option>
+              <option value="SMS">SMS</option>
+              <option value="WhatsApp">WhatsApp</option>
+            </select>
+          </div>
+          <div class="input-group">
+            <label for="reportValue">Number, URL, or snippet</label>
+            <input id="reportValue" type="text" required placeholder="+27 71 555 0101 or scam link" />
+          </div>
+          <div class="input-group full">
+            <label for="reportDetails">What happened?</label>
+            <textarea id="reportDetails" rows="4" placeholder="Describe the scam attempt..."></textarea>
+          </div>
+          <button class="cta" type="submit">Submit report</button>
+        </form>
+        <div class="reports" id="reportList"></div>
+      </section>
+    </main>
+
+    <footer>
+      <div>
+        <strong>PhishShield ZA</strong>
+        <p>Protecting South Africans from phishing, SIM swap, and social engineering attacks.</p>
+      </div>
+      <div>
+        <p>Languages: English · isiZulu · isiXhosa · Afrikaans</p>
+        <p>POPIA-first · On-device analysis · Community moderation</p>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
